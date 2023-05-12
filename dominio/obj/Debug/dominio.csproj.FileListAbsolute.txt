@@ -1,0 +1,8 @@
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\dominio\bin\Debug\dominio.dll
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\dominio\bin\Debug\dominio.pdb
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\dominio\obj\Debug\dominio.dll
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\dominio\obj\Debug\dominio.pdb
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\dominio\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\dominio\obj\Debug\dominio.csproj.CopyComplete

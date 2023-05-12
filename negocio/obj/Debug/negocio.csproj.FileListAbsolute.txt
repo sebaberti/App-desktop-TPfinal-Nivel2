@@ -1,0 +1,10 @@
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\negocio\bin\Debug\negocio.dll
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\negocio\bin\Debug\negocio.pdb
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\negocio\bin\Debug\dominio.dll
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\negocio\bin\Debug\dominio.pdb
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\negocio\obj\Debug\negocio.csproj.CopyComplete
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\negocio\obj\Debug\negocio.dll
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\negocio\obj\Debug\negocio.pdb
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\negocio\bin\Debug\FontAwesome.Sharp.dll
