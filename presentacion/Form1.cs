@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using dominio;
 using negocio;
+using FontAwesome.Sharp;
 
 namespace presentacion
 {
@@ -17,6 +18,7 @@ namespace presentacion
 
     {
         private List<Articulo> listaArticulos;
+        private List<Marca> listaMarcas;
         public frmPresentacion()
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace presentacion
             dgvArticulos.Columns["Descripcion"].Visible = false;
             dgvArticulos.Columns["Id"].Visible = false;
 
-
+           
         }
 
 
@@ -50,7 +52,8 @@ namespace presentacion
             comboBusqueda.Items.Add("Precio mayor a");
             comboBusqueda.Items.Add("Precio menor a");
             comboBusqueda.Items.Add("Precio igual a");
-
+            comboBusqueda.SelectedIndex = 0;
+            dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "0.00";
         }
 
 
@@ -61,8 +64,17 @@ namespace presentacion
             {
                 Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 cargarImagen(seleccionado.ImagenUrl);
-                textBox1.Text = "Nombre: " + seleccionado.Nombre + "\r\n" + "Descripcion: " + seleccionado.Descripcion + "\r\n" + "Precio: " + seleccionado.Precio + "\r\n" + "Categoria: " + seleccionado.Categoria + "\r\n" + "Marca: " + seleccionado.Marca;
+                tbxInformacion.Text = "Nombre: " + seleccionado.Nombre + "\r\n" + "Descripcion: " + seleccionado.Descripcion + "\r\n" + "Precio: " +"$"+seleccionado.Precio.ToString("0.00") + "\r\n" + "Categoria: " + seleccionado.Categoria + "\r\n" + "Marca: " + seleccionado.Marca;
+
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
             }
+            else
+            { 
+                btnModificar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+               
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -94,9 +106,20 @@ namespace presentacion
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Articulo seleccionado;
-            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
-            modificar.ShowDialog();
+            try
+            {
+                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+
+                    frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
+                    modificar.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+
+              MessageBox.Show(ex.ToString());
+            }
             cargar();
         }
 
@@ -108,6 +131,7 @@ namespace presentacion
         {
             List<Articulo> listaFiltrada;
             string filtro = tbxBuscar.Text;
+           
 
             if (comboBusqueda.Enabled == false)
             {
@@ -121,6 +145,7 @@ namespace presentacion
                 else
                 {
                     listaFiltrada = listaArticulos;
+                  
                 }
 
 
@@ -138,6 +163,7 @@ namespace presentacion
                     if (filtro == "")
                     {
                         listaFiltrada = listaArticulos;
+                        
                     }
                     else
 
@@ -167,7 +193,7 @@ namespace presentacion
                     listaFiltrada = listaArticulos;
                 }
                 else
-                    listaFiltrada = listaArticulos;
+                   listaFiltrada = listaArticulos;
 
 
                 dgvArticulos.DataSource = null;
@@ -177,13 +203,14 @@ namespace presentacion
             }
         }
 
-
+      
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
             {
                 comboBusqueda.Enabled = true;
+       
             }
             else
             {
@@ -212,6 +239,63 @@ namespace presentacion
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void tbxBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                Validacion.soloNumeros(e);
+            }
+            else
+                Validacion.soloLetras(e);
+
+        }
+
+      
+
+        private void btnMarcas_Click_1(object sender, EventArgs e)
+        {
+            
+            MarcaNegocio negocio = new MarcaNegocio();
+            try
+            {
+                listaMarcas = negocio.listar();
+                dgvArticulos.DataSource = listaMarcas;
+               
+          
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Maximized;
+            else
+                WindowState = FormWindowState.Normal;
+      
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void frmPresentacion_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+                FormBorderStyle = FormBorderStyle.None;
+            //else FormBorderStyle = FormBorderStyle.Sizable;
         }
     }
     }

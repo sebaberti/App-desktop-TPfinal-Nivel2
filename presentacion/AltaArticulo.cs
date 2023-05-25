@@ -21,6 +21,7 @@ namespace presentacion
         }
         public frmAltaArticulo(Articulo articulo)
         {
+    
             InitializeComponent();
             this.articulo = articulo;
             Text = "Modificar Articulo";
@@ -28,13 +29,13 @@ namespace presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            
+     
             ArticuloNegocio negocio = new ArticuloNegocio();
-
             try
             {
                 if (articulo == null)
                      articulo = new Articulo();
+         
                 articulo.Codigo = tbxCodArt.Text;
                 articulo.Nombre = tbxNombre.Text;    
                 articulo.Descripcion = tbxDescripcion.Text;
@@ -50,7 +51,9 @@ namespace presentacion
                     MessageBox.Show("Modificado Exitosamente");
 
                     }else {
+                   
                     negocio.agregar(articulo);
+             
                     MessageBox.Show("Agregado exitosamente");
                     }
 
@@ -61,6 +64,7 @@ namespace presentacion
 
                 MessageBox.Show(ex.ToString());
             }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -69,10 +73,11 @@ namespace presentacion
         }
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
+
         {
             CategoriaNegocio articuloNegocio = new CategoriaNegocio();
             MarcaNegocio artNegocio = new MarcaNegocio();
-
+            btnAceptar.Enabled = false;
 
             try
             {
@@ -87,6 +92,7 @@ namespace presentacion
 
                 if(articulo != null)
                 {
+                    
                     tbxCodArt.Text = articulo.Codigo;
                     tbxNombre.Text = articulo.Nombre;
                     tbxDescripcion.Text = articulo.Descripcion;
@@ -125,6 +131,33 @@ namespace presentacion
         {
             cargarImagen(tbxImagen.Text);
 
+        }
+
+      private void validarCampo()
+        {
+                var vr = !string.IsNullOrEmpty(tbxCodArt.Text)&&
+                !string.IsNullOrEmpty(tbxPrecio.Text)&&
+                !string.IsNullOrEmpty(tbxNombre.Text);
+                btnAceptar.Enabled = vr;
+        }
+
+     
+        private void tbxCodArt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validarCampo();
+            
+        }
+
+        private void tbxPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validarCampo();
+            Validacion.soloNumeros((KeyPressEventArgs)e);
+        }
+
+        private void tbxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validarCampo();
+            Validacion.soloLetras((KeyPressEventArgs)e);
         }
     }
 }
