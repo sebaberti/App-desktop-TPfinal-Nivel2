@@ -16,3 +16,6 @@ C:\Users\Pc\Desktop\TPFinalNivel2_Berti\presentacion\obj\Debug\presentacion.exe
 C:\Users\Pc\Desktop\TPFinalNivel2_Berti\presentacion\obj\Debug\presentacion.pdb
 C:\Users\Pc\Desktop\TPFinalNivel2_Berti\presentacion\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\Pc\Desktop\TPFinalNivel2_Berti\presentacion\obj\Debug\presentacion.frmAltaArticulo.resources
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\presentacion\obj\Debug\presentacion.Articulos.resources
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\presentacion\obj\Debug\presentacion.Marcas.resources
+C:\Users\Pc\Desktop\TPFinalNivel2_Berti\presentacion\obj\Debug\presentacion.Categorias.resources
