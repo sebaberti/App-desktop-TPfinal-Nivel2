@@ -140,6 +140,7 @@
             // 
             // btnHome
             // 
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.Image = global::presentacion.Properties.Resources.logo1;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Name = "btnHome";
@@ -167,9 +168,10 @@
             // 
             this.lblTittle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTittle.AutoSize = true;
-            this.lblTittle.Location = new System.Drawing.Point(280, 36);
+            this.lblTittle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTittle.Location = new System.Drawing.Point(261, 32);
             this.lblTittle.Name = "lblTittle";
-            this.lblTittle.Size = new System.Drawing.Size(240, 25);
+            this.lblTittle.Size = new System.Drawing.Size(269, 28);
             this.lblTittle.TabIndex = 21;
             this.lblTittle.Text = "GESTOR DE ARTICULOS";
             this.lblTittle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
