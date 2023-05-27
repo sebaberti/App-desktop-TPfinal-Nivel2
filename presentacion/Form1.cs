@@ -22,6 +22,7 @@ namespace presentacion
         private Form activeForm;
         private IconButton currentBtn;
         
+        
         public frmPresentacion()
         {
             InitializeComponent();
@@ -74,11 +75,14 @@ namespace presentacion
             activeForm = childForm;
         }
 
+       
+
         private void btnArticulos_Click(object sender, EventArgs e)
         {
             BotonActivo(sender, Color.Tomato);
             OpenChildForm(new Articulos(), sender);
-            
+           
+
         }
         private void btnMarcas_Click(object sender, EventArgs e)
         {
@@ -113,7 +117,7 @@ namespace presentacion
         {
             if (WindowState == FormWindowState.Maximized)
                 FormBorderStyle = FormBorderStyle.None;
-            //else FormBorderStyle = FormBorderStyle.Sizable;
+            
         }
 
 

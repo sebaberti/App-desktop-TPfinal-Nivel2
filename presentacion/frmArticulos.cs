@@ -40,7 +40,6 @@ namespace presentacion
             dgvArticulos.Columns["Descripcion"].Visible = false;
             dgvArticulos.Columns["Id"].Visible = false;
 
-
         }
 
 
@@ -243,16 +242,17 @@ namespace presentacion
         private void tbxBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (checkBox1.Checked)
-            {
-                Validacion.soloNumeros(e);
-            }
-            else
-                Validacion.soloLetras(e);
 
+                Validacion.soloNumeros(e);
+            else
+                Validacion.soloLetras(e);  
         }
 
-     
+        private void checkBox1_Click(object sender, EventArgs e)
+        {
+            tbxBuscar.Text = "";
+        }
 
-       
+    
     }
 }

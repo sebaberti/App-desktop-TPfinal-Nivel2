@@ -49,9 +49,6 @@ namespace negocio
             {
                 datos.setearConsulta("insert into Categorias (Descripcion) values ('" + nuevo.Descripcion + "')");
 
-
-                //datos.setearParametro("descripcion", nuevo.Descripcion);
-
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
