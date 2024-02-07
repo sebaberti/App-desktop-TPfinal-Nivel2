@@ -1,5 +1,5 @@
 <h1>APP DESKTOP - WINFORMS</h1>
-<p>Desarrollada en .NET Framework con C# usando la libreria ADO .NET para la conexion a ;a bases de datos SQL Server. Este proyecto fue realizado como trabajo final del curso nivel 2 de Maxi Programa </p>
+<p>Desarrollada en .NET Framework con C# usando la libreria ADO .NET para la conexion a bases de datos SQL Server. Este proyecto fue realizado como trabajo final del curso nivel 2 de Maxi Programa </p>
 <ul>
   <li>Alta, Baja y Modificación de artículos.</li>
    <li>Campo de busqueda para filtrar productos, y busqueda avanzada para filtrar segun criterios</li>
